@@ -23,8 +23,8 @@ nextBtn.addEventListener("click", function validateBillAmt() {})
 
 checkBtn.addEventListener("click", function validateAmt() {
     hideMsg();
-    if (billAmount.value > 0) {
-        if (cashGiven.value >= billAmount.value) {
+    if (billAmount.value > 0 && cashGiven.value > 0) {
+        if (Number(billAmount.value ) <= Number(cashGiven.value)) {
             showMsg("Approved");
             const amtToReturn = cashGiven.value - billAmount.value;
             console.log(amtToReturn)
